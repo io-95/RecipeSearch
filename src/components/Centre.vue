@@ -7,7 +7,7 @@
         </div>
 
         <div id="search">
-            <input v-model="input" type="text" name="searchInput">
+            <input v-model="input" type="text" name="searchInput" placeholder="Type a Keyword">
             <button v-if="input != null" v-on:click="search()" id="searchButton" >search</button>
         </div>
     </div>

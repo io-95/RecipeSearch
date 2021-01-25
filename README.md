@@ -6,7 +6,8 @@ https://gracious-montalcini-b7fdaa.netlify.app/
 ## Architektur
 
 Ich habe die standard Architektur von Vue.js verwendet. Meine Webseite habe ich in vier Komponenten aufgeteilt, auf die ich über die App.vue datei zugreife.
-Die Vier Komponenten sind der Header der Webseite, das Zentrum der Webseite, bestehend aus einem zufaälligen Rezept und einer Suchfunktion, 
+Die Vier Komponenten sind der Header der Webseite in der alle Kategorien aufgelistet werden, 
+das Zentrum der Webseite in welchem sich eine zufälliges Rezept und ein Suchfeld befindet, bestehend aus einem zufaälligen Rezept und einer Suchfunktion, 
 einer Listen Komponente in der die Suchergebnisse aufgelistet werden und einer Komponente Popup und welcher dann das Rezept angezeigt wird.
 
 ## Lokal starten
