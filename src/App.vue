@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import Header from './components/Header.vue'
 import Centre from './components/Centre.vue'
 import List from './components/List.vue'
@@ -25,7 +24,6 @@ export default {
   data() {
     return {
       elements: [],
-      mealId: String,
       searchResult: []
     };
   },
@@ -33,11 +31,8 @@ export default {
     emitResult: function(result) {
       this.elements = result;
     },
-    emitId(id){
-      axios
-        .get(
-            'https://www.themealdb.com/api/json/v1/1/lookup.php?i='+ id
-      ).then(response => (this.searchResult = response.data.meals));
+    emitId(meal){
+      this.searchResult = meal;
     }
   }
 }

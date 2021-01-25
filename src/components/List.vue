@@ -7,11 +7,16 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
     name: 'list',
     methods: {
             popup(id){
-                this.$emit('popup', id)
+                axios
+                .get(
+                    'https://www.themealdb.com/api/json/v1/1/lookup.php?i='+ id
+                ).then(response => ( this.$emit('popup', response.data.meals)));
             }
     },
     props: {
