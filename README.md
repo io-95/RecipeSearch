@@ -18,4 +18,4 @@ Um die Webseite lokal zu starten muss lediglich NPM und Vue instaliert sein.
 - Dann führen Sie im Verzeichnis in dem das Projekt abgelegt wurde npm run serve aus und über den Angezeigten Link können Sie die Webseite aufrufen
 
 
-Ibrahim Özel MatrNr. 30027
+Ibrahim Özel
