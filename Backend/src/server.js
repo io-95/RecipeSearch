@@ -11,5 +11,12 @@ server.on("error", (err) => {
     console.error(`Port ${PORT} is already in use.`);
     console.error("server error:", err);
     process.exit(1);
+  } else if (err.code === "EACCES") {
+    console.error(
+      `Permission denied for port ${PORT}. Ports below 1024 require administrator rights.`
+    );
+    console.error("server error:", err);
+  } else {
+    console.error("Error while starting the server:", err);
   }
 });
