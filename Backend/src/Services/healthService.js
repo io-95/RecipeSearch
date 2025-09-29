@@ -1,5 +1,5 @@
 function getHealthStatus() {
-    return `ok`;
+    return `I'm healthy`;
   }
   
   module.exports = { getHealthStatus };
