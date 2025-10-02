@@ -11,3 +11,16 @@ paths:
       responses:
         '200':
           description: OK
+  
+  /recipes/recipeOfTheDay:
+    get:
+      summary: Get the recipe of the day
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                items: 
+                  $ref: '#/components/shema/Recipe'
