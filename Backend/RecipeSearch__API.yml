@@ -28,7 +28,24 @@ paths:
                   $ref: '#/components/schemas/Recipe'
         '505':
           description: server unreachable
-          
+
+  /recipe?search={recipeName}:
+    get:
+      summary: Get all recipes for a certain keyword
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                    $ref: '#/components/schemas/Recipe'
+        '404':
+          description: recipe not found
+        '505':
+          description: server unreachable
+
 components:
   schemas:
     Recipe:
