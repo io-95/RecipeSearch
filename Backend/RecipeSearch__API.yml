@@ -23,4 +23,26 @@ paths:
               schema:
                 type: object
                 items: 
-                  $ref: '#/components/shema/Recipe'
+                  $ref: '#/components/schemas/Recipe'
+
+components:
+  schemas:
+    Recipe:
+      type: object
+      properties:
+        id:
+          type: number
+        title:
+          type: string
+        instructions:
+          type: string
+        ingridiants:
+          type: array
+          items:
+            type: string
+        measure:
+          type: array
+          items:
+            type: string
+        thumnail:
+          type: string
