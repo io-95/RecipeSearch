@@ -7,6 +7,7 @@ servers:
 paths:
   /health:
     get:
+      summary: Check the health status of the server
       responses:
         '200':
           description: OK
