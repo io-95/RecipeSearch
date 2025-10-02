@@ -8,4 +8,6 @@ router.get("/health", sendHealthStatus);
 
 router.get("/recipes", sendRecipeList);
 
+router.get("/recipe", sendRecipeOfTheDay);
+
 module.exports = router;
