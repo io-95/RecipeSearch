@@ -1,4 +1,5 @@
 const { getRecipeList } = require("../Services/recipeService");
+const { getRecipeOfTheDay } = require("../Services/recipeService");
 
 function sendRecipeList(req, res) {
     const keyword = req.querry.search;
@@ -7,4 +8,10 @@ function sendRecipeList(req, res) {
     res.status(200).json(recipeList);
 }
 
-module.exports = { sendRecipeList };
+function sendRecipeOfTheDay(req, res) {
+    const recipeOfTheDay = getRecipeOfTheDay();
+
+    res.status(200).json(recipeOfTheDay);
+}
+
+module.exports = { sendRecipeList , sendRecipeOfTheDay};
