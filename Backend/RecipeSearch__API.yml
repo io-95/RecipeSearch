@@ -11,6 +11,8 @@ paths:
       responses:
         '200':
           description: OK
+        '505':
+          description: server unreachable
   
   /recipes/recipeOfTheDay:
     get:
@@ -26,7 +28,7 @@ paths:
                   $ref: '#/components/schemas/Recipe'
         '505':
           description: server unreachable
-
+          
 components:
   schemas:
     Recipe:
