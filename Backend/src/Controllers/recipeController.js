@@ -25,9 +25,9 @@ function sendRecipeList(req, res) {
     }
 }
 
-function sendRecipeOfTheDay(req, res) {
+async function sendRecipeOfTheDay(req, res) {
     try{
-        const recipeOfTheDay = getRecipeOfTheDay();
+        const recipeOfTheDay = await getRecipeOfTheDay();
         res.status(200).json(recipeOfTheDay);
     }catch(err){
         console.error("Database call failed:", err.message);

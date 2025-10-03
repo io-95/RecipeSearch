@@ -1,10 +1,10 @@
-const { sendRecipeOfTheDay } = require("../src/Controllers/recipeController");
+const { sendRecipeOfTheDay } = require("../../src/Controllers/recipeController");
 
-jest.mock("../src/Services/recipeService", () => ({
+jest.mock("../../src/Services/recipeService", () => ({
     getRecipeOfTheDay: jest.fn(),
 }));
 
-const { getRecipeOfTheDay } = require("../src/Service/recipeService");
+const { getRecipeOfTheDay } = require("../../src/Services/recipeService");
 
 describe("sendRecipeOfTheDay (Unit-Test)", () => {
     let req, res;
