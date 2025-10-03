@@ -21,7 +21,7 @@ function sendRecipeList(req, res) {
         res.status(200).json(recipeList);
     }catch(err){
         console.error("Database call failed:", err.message);
-        res.status(502).json({ error: "Database unavailable" });
+        res.status(503).json({ error: "Database unavailable" });
     }
 }
 
@@ -33,7 +33,7 @@ function sendRecipeOfTheDay(req, res) {
 
 function sanitizeKeywordForLike(keyword){
     // remove control chars, trim, enforce max length
-    let k = String(keyword || "").trim().slice(0, 100);
+    let k = String(keyword || "").trim().slice(0, 30);
 
     // escape LIKE wildcards '%' and '_' by prefixing with backslash
     // also escape backslash itself
