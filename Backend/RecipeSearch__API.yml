@@ -40,6 +40,8 @@ paths:
                 type: array
                 items:
                     $ref: '#/components/schemas/Recipe'
+        '400':
+          description: empty/invalid search parameter
         '404':
           description: recipe not found
         '503':
