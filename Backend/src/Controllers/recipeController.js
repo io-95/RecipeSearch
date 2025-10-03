@@ -26,9 +26,13 @@ function sendRecipeList(req, res) {
 }
 
 function sendRecipeOfTheDay(req, res) {
-    const recipeOfTheDay = getRecipeOfTheDay();
-
-    res.status(200).json(recipeOfTheDay);
+    try{
+        const recipeOfTheDay = getRecipeOfTheDay();
+        res.status(200).json(recipeOfTheDay);
+    }catch(err){
+        console.error("Database call failed:", err.message);
+        res.status(503).json({ error: "Database unavailable" });
+    }
 }
 
 function sanitizeKeywordForLike(keyword){
