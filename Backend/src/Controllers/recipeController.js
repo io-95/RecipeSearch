@@ -13,16 +13,19 @@ function sendRecipeList(req, res) {
         if (keyword.length === 0) {
           return res.status(400).json({ error: "empty search after sanitization" });
         }
+
+        const recipeList = getRecipeList(keyword);
+        if(recipeList === null){
+            res.status(404).json({status: "Recipe not found"});
+        }
+        
+        res.status(200).json(recipeList);
     }catch(err){
 
     }
 
-    const recipeList = getRecipeList(keyword);
     
-    if(recipeList === null){
-        res.status(404).json({status: "Recipe not found"});
-    }
-    res.status(200).json(recipeList);
+    
 }
 
 function sendRecipeOfTheDay(req, res) {
