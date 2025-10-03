@@ -42,8 +42,8 @@ paths:
                     $ref: '#/components/schemas/Recipe'
         '404':
           description: recipe not found
-        '503':
-          description: service unavailable
+        '502':
+          description: bad gateway
 
 components:
   schemas:
