@@ -3,13 +3,12 @@ const { getRecipeOfTheDay } = require("../Services/recipeService");
 
 function sendRecipeList(req, res) {
     const keyword = req.querry.search;
-    try {
-        const recipeList = getRecipeList(keyword);
-        if(recipeList === null){
-            res.status(404).json("status: Recipe not found");
-        }
-        res.status(200).json(recipeList);
+    const recipeList = getRecipeList(keyword);
+    
+    if(recipeList === null){
+        res.status(404).json({status: "Recipe not found"});
     }
+    res.status(200).json(recipeList);
 }
 
 function sendRecipeOfTheDay(req, res) {
