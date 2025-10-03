@@ -15,7 +15,6 @@ describe("sendRecipeOfTheDay (Unit-Test)", () => {
             status: jest.fn().mockReturnThis(),
             json: jest.fn(),
         };
-        jest.clearAllMocks();
     })
 
     it("returns 200 and the recipe of the day", async () => {
