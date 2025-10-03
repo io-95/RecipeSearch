@@ -26,7 +26,7 @@ describe("sendRecipeOfTheDay (Unit-Test)", () => {
     });
 
     it("returns 503 if service throws", async () => {
-        getRecipeOfTheDay.mockResolvedValue(new Error("DB error"));
+        getRecipeOfTheDay.mockRejectedValue(new Error("DB error"));
 
         await sendRecipeOfTheDay(req, res);
         expect(res.status).toHaveBeenCalledWith(503);
