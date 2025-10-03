@@ -16,7 +16,7 @@ function sendRecipeList(req, res) {
 
         const recipeList = getRecipeList(keyword);
         if(recipeList === null){
-            res.status(404).json({status: "Recipe not found"});
+            res.status(404).json({ error: "Recipe not found" });
         }
         res.status(200).json(recipeList);
     }catch(err){
