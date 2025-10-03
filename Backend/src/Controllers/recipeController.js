@@ -18,14 +18,11 @@ function sendRecipeList(req, res) {
         if(recipeList === null){
             res.status(404).json({status: "Recipe not found"});
         }
-        
         res.status(200).json(recipeList);
     }catch(err){
-
+        console.error("Database call failed:", err.message);
+        res.status(502).json({ error: "Database unavailable" });
     }
-
-    
-    
 }
 
 function sendRecipeOfTheDay(req, res) {
