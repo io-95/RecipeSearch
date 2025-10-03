@@ -15,7 +15,7 @@ describe("sendRecipeOfTheDay (Unit-Test)", () => {
             status: jest.fn().mockReturnThis(),
             json: jest.fn(),
         };
-    })
+    });
 
     it("returns 200 and the recipe of the day", async () => {
         getRecipeOfTheDay.mockResolvedValue(recipeOfTheDay);
@@ -31,7 +31,7 @@ describe("sendRecipeOfTheDay (Unit-Test)", () => {
         await sendRecipeOfTheDay(req, res);
         expect(res.status).toHaveBeenCalledWith(503);
         expect(res.json).toHaveBeenCalledWith({ error: "Database unavailable" });
-    })
+    });
 });
 
 var recipeOfTheDay = {
