@@ -9,6 +9,6 @@ router.get("/health", sendHealthStatus);
 
 router.get("/recipes", sendRecipeList);
 
-router.get("/recipe", sendRecipeOfTheDay);
+router.get("/recipes/recipeoftheday", sendRecipeOfTheDay);
 
 module.exports = router;
