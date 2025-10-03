@@ -19,6 +19,10 @@ describe("sendRecipeOfTheDay (Unit-Test)", () => {
 
     it("returns 200 and the recipe of the day", async () => {
         getRecipeOfTheDay.mockResolvedValue(recipeOfTheDay);
+
+        await sendRecipeOfTheDay(req, res);
+        expect(res.status).toHaveBeenCalledWith(200);
+        expect(res.json).toHaveBeenCalledWith(recipeOfTheDay);
     });
 });
 
