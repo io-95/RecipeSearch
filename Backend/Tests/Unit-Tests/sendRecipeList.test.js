@@ -26,6 +26,14 @@ describe("sendRecipeList (Unit-Test)", () => {
         expect(res.json).toHaveBeenCalledWith(recipeList);
     });
 
+    it("return 400 if empty string is send", async () => {
+        req = {query: {search: ""}};
+
+        await sendRecipeList(req, res);
+        expect(res.status).toHaveBeenCalledWith(400);
+        expect(res.json).toHaveBeenCalledWith({ error: "missing or invalid search parameter" });
+    });
+
     it("return 404 if getRecipeList returns null", async () => {
         getRecipeList.mockResolvedValue(null);
         req = {query: {search: "alfredo"}};
