@@ -27,7 +27,12 @@ describe("sendRecipeList (Unit-Test)", () => {
     });
 
     it("return 404 if getRecipeList returns null", async () => {
-        
+        getRecipeList.mockResolvedValue(null);
+        req = {query: {search: "alfredo"}};
+
+        await sendRecipeList(req, res);
+        expect(res.status).toHaveBeenCalledWith(404);
+        expect(res.json).toHaveBeenCalledWith({ error: "Recipe not found" });
     });
 });
 
