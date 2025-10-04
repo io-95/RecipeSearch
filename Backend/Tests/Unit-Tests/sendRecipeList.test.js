@@ -6,3 +6,14 @@ jest.mock("../../src/Controllers/recipeController", () => {
 
 const { getRecipeList } = require("../../src/Controllers/recipeController");
 
+describe("sendRecipeList (Unit-Test)", () => {
+    let req, res;
+
+    beforeEach( () => {
+        req = {};
+        res = {
+            status: jest.fn().mockReturnThis(),
+            json: jest.fn(),
+        };
+    });
+});
