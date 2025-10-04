@@ -25,6 +25,10 @@ describe("sendRecipeList (Unit-Test)", () => {
         expect(res.status).toHaveBeenCalledWith(200);
         expect(res.json).toHaveBeenCalledWith(recipeList);
     });
+
+    it("return 404 if getRecipeList returns null", async () => {
+        
+    });
 });
 
 var recipeList = {
