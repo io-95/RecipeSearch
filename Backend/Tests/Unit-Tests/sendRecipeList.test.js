@@ -34,6 +34,10 @@ describe("sendRecipeList (Unit-Test)", () => {
         expect(res.status).toHaveBeenCalledWith(404);
         expect(res.json).toHaveBeenCalledWith({ error: "Recipe not found" });
     });
+
+    it("return 503 if service throws" async () => {
+        
+    });
 });
 
 var recipeList = {
