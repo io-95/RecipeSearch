@@ -1,5 +1,4 @@
 const { sendRecipeList } = require("../../src/Controllers/recipeController");
-console.log(sendRecipeList);
 
 jest.mock("../../src/Controllers/recipeController", () => ({
     getRecipeList: jest.fn(),
