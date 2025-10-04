@@ -11,11 +11,6 @@ describe("sendRecipeList (Unit-Test)", () => {
     let searchInput;
 
     beforeEach( () => {
-        req = {
-            query: {
-                search: searchInput
-            }
-        };
         res = {
             status: jest.fn().mockReturnThis(),
             json: jest.fn(),
@@ -24,7 +19,7 @@ describe("sendRecipeList (Unit-Test)", () => {
 
     it("return 200 and a list of recipes", () => {
         getRecipeList.mockResolvedValue(recipeList);
-        searchInput = "alfredo";
+        req = {query: {search: "alfredo"}};
 
         sendRecipeList(req, res);
         expect(res.status).toHaveBeenCalledWith(200);
