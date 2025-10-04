@@ -17,11 +17,11 @@ describe("sendRecipeList (Unit-Test)", () => {
         };
     });
 
-    it("return 200 and a list of recipes", () => {
+    it("return 200 and a list of recipes", async () => {
         getRecipeList.mockResolvedValue(recipeList);
         req = {query: {search: "alfredo"}};
 
-        sendRecipeList(req, res);
+        await sendRecipeList(req, res);
         expect(res.status).toHaveBeenCalledWith(200);
         expect(res.json).toHaveBeenCalledWith(recipeList);
     });

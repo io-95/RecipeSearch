@@ -1,7 +1,7 @@
 const { getRecipeList } = require("../Services/recipeService");
 const { getRecipeOfTheDay } = require("../Services/recipeService");
 
-function sendRecipeList(req, res) {
+async function sendRecipeList(req, res) {
     try {
         const raw = req.query.search;
         if (!raw || typeof raw !== "string") {
@@ -14,7 +14,7 @@ function sendRecipeList(req, res) {
           return res.status(400).json({ error: "empty search after sanitization" });
         }
 
-        const recipeList = getRecipeList(keyword);
+        const recipeList = await getRecipeList(keyword);
         if(recipeList === null){
             res.status(404).json({ error: "Recipe not found" });
         }
