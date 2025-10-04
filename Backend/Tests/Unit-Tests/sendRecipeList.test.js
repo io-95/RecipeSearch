@@ -1,6 +1,6 @@
 const { sendRecipeList } = require("../../src/Controllers/recipeController");
 
-jest.mock("../../src/Controllers/recipeController", () => ({
+jest.mock("../../src/Services/recipeService", () => ({
     getRecipeList: jest.fn(),
 }));
 
@@ -27,8 +27,8 @@ describe("sendRecipeList (Unit-Test)", () => {
         searchInput = "alfredo";
 
         sendRecipeList(req, res);
-        expact(res.status).toHaveBeenCalledWith(200);
-        expact(res.json).toHaveBeenCalledWith(recipeList);
+        expect(res.status).toHaveBeenCalledWith(200);
+        expect(res.json).toHaveBeenCalledWith(recipeList);
     });
 });
 
