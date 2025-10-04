@@ -1,10 +1,11 @@
 const { sendRecipeList } = require("../../src/Controllers/recipeController");
+console.log(sendRecipeList);
 
 jest.mock("../../src/Controllers/recipeController", () => ({
     getRecipeList: jest.fn(),
 }));
 
-const { getRecipeList } = require("../../src/Controllers/recipeController");
+const { getRecipeList } = require("../../src/Services/recipeController");
 
 describe("sendRecipeList (Unit-Test)", () => {
     let req, res;

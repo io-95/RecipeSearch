@@ -2,4 +2,8 @@ function getRecipeOfTheDay() {
     throw new Error("DB error");
 }
 
-module.exports = { getRecipeOfTheDay }
+function getRecipeList() {
+
+}
+
+module.exports = { getRecipeOfTheDay, getRecipeList }
