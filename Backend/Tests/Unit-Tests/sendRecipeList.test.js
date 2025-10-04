@@ -35,8 +35,13 @@ describe("sendRecipeList (Unit-Test)", () => {
         expect(res.json).toHaveBeenCalledWith({ error: "Recipe not found" });
     });
 
-    it("return 503 if service throws" async () => {
-        
+    it("return 503 if service throws", async () => {
+        getRecipeList.mockRejectedValue(new Error("DB error"));
+        req = {query: {search: "alfredo"}};
+
+        await sendRecipeList(req, res);
+        expect(res.status).toHaveBeenCalledWith(503);
+        expect(res.json).toHaveBeenCalledWith({ error: "Database unavailable" });
     });
 });
 
