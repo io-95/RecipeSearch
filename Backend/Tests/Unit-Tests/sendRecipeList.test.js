@@ -23,7 +23,11 @@ describe("sendRecipeList (Unit-Test)", () => {
     });
 
     it("return 200 and a list of recipes", () => {
-        getRecipeList.mockResolvedValue();
+        getRecipeList.mockResolvedValue(recipeList);
+
+        sendRecipeList(req, res);
+        expact(res.status).toHaveBeenCalledWith(200);
+        expact(res.json).toHaveBeenCalledWith(recipeList);
     });
 });
 
