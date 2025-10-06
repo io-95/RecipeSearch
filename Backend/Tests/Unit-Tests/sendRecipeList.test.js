@@ -8,10 +8,8 @@ const { getRecipeList } = require("../../src/Services/recipeService");
 
 describe("sendRecipeList (Unit-Test)", () => {
     let req, res;
-    let searchInput;
 
     beforeEach( () => {
-        req = {};
         res = {
             status: jest.fn().mockReturnThis(),
             json: jest.fn(),
