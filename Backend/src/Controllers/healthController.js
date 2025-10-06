@@ -1,7 +1,7 @@
 const { getHealthStatus } = require("../Services/healthService");
 
-function sendHealthStatus(req, res) {
-  const healthStatus = getHealthStatus();
+async function sendHealthStatus(req, res) {
+  const healthStatus = await getHealthStatus();
   res.status(200).json({ message: healthStatus });
 }
 

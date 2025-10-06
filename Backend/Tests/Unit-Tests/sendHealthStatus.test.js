@@ -18,5 +18,11 @@ describe("sendHealthStatus (Unit-Test)", () => {
         };
     });
 
-    
+    it("returns 200 and status ok", async () => {
+        getHealthStatus.mockResolvedValue('OK');
+
+        await sendHealthStatus(req, res);
+        expect(res.status).toHaveBeenCalledWith(200);
+        expect(res.json).toHaveBeenCalledWith({ message: "OK" });
+    });
 });
