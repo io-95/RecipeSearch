@@ -16,5 +16,7 @@ describe("sendHealthStatus (Unit-Test)", () => {
             status: jest.fn().mockReturnThis(),
             json: jest.fn(),
         };
-    })
+    });
+
+    
 });
