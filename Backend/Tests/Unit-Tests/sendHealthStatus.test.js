@@ -11,6 +11,7 @@ describe("sendHealthStatus (Unit-Test)", () => {
     let req, res;
 
     beforeEach( () => {
+        req = {};
         res = {
             status: jest.fn().mockReturnThis(),
             json: jest.fn(),
