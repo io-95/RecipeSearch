@@ -11,6 +11,7 @@ describe("sendRecipeList (Unit-Test)", () => {
     let searchInput;
 
     beforeEach( () => {
+        req = {};
         res = {
             status: jest.fn().mockReturnThis(),
             json: jest.fn(),
