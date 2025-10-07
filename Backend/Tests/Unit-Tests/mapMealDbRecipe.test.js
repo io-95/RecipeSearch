@@ -3,8 +3,9 @@ const { mapMealDbRecipe } = require("../../src/Model/recipe.mapper");
 describe("mapMealDbRecipe (Unit-Test)", () => {
     it("returns a mapped recipe", () => {
         const mappedRecipe = mapMealDbRecipe(mealDbRecipe.meals[0]);
-        console.log(mappedRecipe);
-        //expect(mappedRecipe).toEqual(recipeOfTheDay.recipe[0]);
+        //console.log(mappedRecipe);
+        //console.log(recipeOfTheDay.recipe[0]);
+        expect(mappedRecipe).toEqual(recipeOfTheDay.recipe[0]);
     });
 });
 
@@ -13,25 +14,8 @@ var recipeOfTheDay = {
         {
             id: "52835",
             mealName: "Fettucine alfredo",
-            instraction: `In a medium saucepan, stir the clotted cream, butter 
-                and cornflour over a low-ish heat and bring to a low simmer. 
-                Turn off the heat and keep warm.\r\nMeanwhile, put the cheese 
-                and nutmeg in a small bowl and add a good grinding of black 
-                pepper, then stir everything together (don’t add any salt at 
-                this stage).\r\nPut the pasta in another pan with 2 tsp salt, 
-                pour over some boiling water and cook following pack 
-                instructions (usually 3-4 mins). When cooked, scoop some of 
-                the cooking water into a heatproof jug or mug and drain the 
-                pasta, but not too thoroughly.\r\nAdd the pasta to the pan with 
-                the clotted cream mixture, then sprinkle over the cheese and 
-                gently fold everything together over a low heat using a rubber 
-                spatula. When combined, splash in 3 tbsp of the cooking water. 
-                At first, the pasta will look wet and sloppy: keep stirring 
-                until the water is absorbed and the sauce is glossy. Check the 
-                seasoning before transferring to heated bowls. Sprinkle over 
-                some chives or parsley, then serve immediately.`,
-            thumbnail: `https://www.themealdb.com/images/media/meals
-                /uquqtu1511178042.jpg`,
+            instructions: "In a medium saucepan, stir the clotted cream, butter and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm.\r\nMeanwhile, put the cheese and nutmeg in a small bowl and add a good grinding of black pepper, then stir everything together (don’t add any salt at this stage).\r\nPut the pasta in another pan with 2 tsp salt, pour over some boiling water and cook following pack instructions (usually 3-4 mins). When cooked, scoop some of the cooking water into a heatproof jug or mug and drain the pasta, but not too thoroughly.\r\nAdd the pasta to the pan with the clotted cream mixture, then sprinkle over the cheese and gently fold everything together over a low heat using a rubber spatula. When combined, splash in 3 tbsp of the cooking water. At first, the pasta will look wet and sloppy: keep stirring until the water is absorbed and the sauce is glossy. Check the seasoning before transferring to heated bowls. Sprinkle over some chives or parsley, then serve immediately.",
+            thumbnail: `https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg`,
             ingredients: [
                 "Clotted Cream", "Butter", "Corn Flour", "Parmesan Cheese", 
                 "Nutmeg", "Fettuccine", "Parsley",
