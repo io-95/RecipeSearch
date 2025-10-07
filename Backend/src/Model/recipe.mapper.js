@@ -13,7 +13,7 @@ function mapMealDbRecipe(apiRecipe) {
     const ingredients = [];
     for (let i = 1; i <= 20; i++) {
       const name = apiRecipe[`strIngredient${i}`];
-      if (name && name.trim()) ingredients.push({ name });
+      if (name && name.trim()) ingredients.push(name);
     }
     return ingredients;
   }
@@ -22,7 +22,7 @@ function mapMealDbRecipe(apiRecipe) {
     const measures = [];
     for (let i = 1; i <= 20; i++) {
       const measure = apiRecipe[`strMeasure${i}`];
-      if (measure && measure.trim()) measures.push({ measure });
+      if (measure && measure.trim()) measures.push(measure);
     }
     return measures;
   }
