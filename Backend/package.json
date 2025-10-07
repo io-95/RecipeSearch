@@ -10,5 +10,8 @@
     "testMatch": [
       "**/Tests/Unit-Tests/**/*.test.js"
     ]
+  },
+  "dependencies": {
+    "joi": "^18.0.1"
   }
 }
