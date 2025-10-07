@@ -17,6 +17,21 @@ const recipe = Joi.object({
     thumbnail: Joi.string()
         .uri()
         .required(),
+    
+    ingredients: Joi.array()
+        .items(
+            Joi.string()
+        ).min(1)
+        .max(20)
+        .required(),
+
+    measure: Joi.array()
+        .items(
+            Joi.string()
+            .min(2)
+        ).min(1)
+        .max(20)
+        .required()
 });
 
 module.exports = { recipe }
