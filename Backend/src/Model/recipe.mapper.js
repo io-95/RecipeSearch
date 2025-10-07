@@ -3,9 +3,9 @@ function mapMealDbRecipe(apiRecipe) {
       id: apiRecipe.idMeal,
       mealName: apiRecipe.strMeal,
       instructions: apiRecipe.strInstructions,
+      thumbnail: apiRecipe.strMealThumb,
       ingredients: extractIngredients(apiRecipe),
-      measure: extractMeasures(apiRecipe),
-      thumbnail: apiRecipe.strMealThumb
+      measure: extractMeasures(apiRecipe)
     };
   }
   
