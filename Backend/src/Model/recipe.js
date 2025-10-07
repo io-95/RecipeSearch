@@ -15,6 +15,7 @@ const recipe = Joi.object({
         .required(),
 
     thumbnail: Joi.string()
+        .uri()
         .required(),
 });
 
