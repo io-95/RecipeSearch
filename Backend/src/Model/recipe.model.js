@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const recipe = Joi.object({
+const recipeModel = Joi.object({
     id: Joi.string()
         .alphanum()
         .pattern(new RegExp('^[0-9]{5}$'))
@@ -32,4 +32,4 @@ const recipe = Joi.object({
         .required()
 });
 
-module.exports = { recipe }
+module.exports = { recipeModel }

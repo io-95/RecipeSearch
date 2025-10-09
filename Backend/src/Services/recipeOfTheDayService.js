@@ -1,6 +1,6 @@
 const axios = require("axios");
 const { mapMealDbRecipe } = require("../Model/recipe.mapper.js");
-const { recipe } = require("../Model/recipe.model.js");
+const { recipeModel } = require("../Model/recipe.model.js");
 
 let recipeOfTheDayCache = {
     data: null,
@@ -13,7 +13,7 @@ async function fetchRandomRecipe() {
         const rawRecipe = data.meals[0];
         const mapped = mapMealDbRecipe(rawRecipe);
 
-        const { error, value } = recipe.validate(mapped);
+        const { error, value } = recipeModel.validate(mapped);
         if (error) {
             throw new Error(`Invalid recipe data: ${error.message}`);
         }
