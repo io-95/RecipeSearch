@@ -1,5 +1,5 @@
 const { getRecipeList } = require("../Services/recipeService");
-const { getRecipeOfTheDay } = require("../Services/recipeService");
+const { getRecipeOfTheDay } = require("../Services/recipeOfTheDayService");
 
 async function sendRecipeList(req, res) {
     try {
