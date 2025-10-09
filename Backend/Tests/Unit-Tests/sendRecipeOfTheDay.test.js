@@ -1,6 +1,6 @@
 const { sendRecipeOfTheDay } = require("../../src/Controllers/recipeController");
 
-jest.mock("../../src/Services/recipeService", () => ({
+jest.mock("../../src/Services/recipeOfTheDayService", () => ({
     getRecipeOfTheDay: jest.fn(),
 }));
 
