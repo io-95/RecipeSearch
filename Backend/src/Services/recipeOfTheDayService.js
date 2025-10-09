@@ -34,16 +34,16 @@ export async function getRecipeOfTheDay() {
     const ONE_DAY_MS = 24 * 60 * 60 * 1000;
   
     if (
-      recipeOfTheDayCache.data &&
-      Date.now() - recipeOfTheDayCache.lastUpdated < ONE_DAY_MS
+        recipeOfTheDayCache.data &&
+        Date.now() - recipeOfTheDayCache.lastUpdated < ONE_DAY_MS
     ) {
-      return recipeOfTheDayCache.data;
+        return recipeOfTheDayCache.data;
     }
   
     const recipe = await fetchRandomRecipe();
-    recipeOfTheDayCache = {
-      data: recipe,
-      lastUpdated: Date.now()
+        recipeOfTheDayCache = {
+        data: recipe,
+        lastUpdated: Date.now()
     };
     return recipe;
 }
