@@ -47,3 +47,26 @@ export async function getRecipeOfTheDay() {
     };
     return recipe;
 }
+
+export async function initRecipeScheduler() {
+    try {
+        console.log("Fetching initial 'Recipe of the Day'...");
+        recipeOfTheDayCache.data = await fetchRandomRecipe();
+        recipeOfTheDayCache.lastUpdated = Date.now();
+        console.log("Recipe of the Day cached successfully.");
+    } catch (err) {
+        console.error("Failed to fetch Recipe of the Day:", err.message);
+    }
+  
+    setInterval(async () => {
+        try {
+            console.log("Refreshing Recipe of the Day...");
+            const newRecipe = await fetchRandomRecipe();
+            recipeOfTheDayCache.data = newRecipe;
+            recipeOfTheDayCache.lastUpdated = Date.now();
+            console.log("Recipe of the Day updated.");
+        } catch (err) {
+            console.error("Scheduled fetch failed:", err.message);
+        }
+    }, 24 * 60 * 60 * 1000);
+}
