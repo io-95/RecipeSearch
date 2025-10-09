@@ -12,7 +12,6 @@ let recipeOfTheDayCache = {
     const rawRecipe = data.meals[0];
     const mapped = mapMealDbRecipe(rawRecipe);
   
-    // Validate
     const { error, value } = recipeSchema.validate(mapped);
     if (error) {
       throw new Error(`Invalid recipe data: ${error.message}`);
