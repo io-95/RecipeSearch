@@ -1,6 +1,6 @@
 const express = require("express");
 const router = require("./Routers");
-cost { intitRecipeScheduler } = require("Service/recipeOfTheDayService");
+const { intitRecipeScheduler } = require("Services/recipeOfTheDayService");
 
 const app = express();
 app.use(express.json());
