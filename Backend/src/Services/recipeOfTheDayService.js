@@ -5,7 +5,7 @@ const { recipeSchema } = require("../models/recipe.schema.js");
 let recipeOfTheDayCache = {
     data: null,
     lastUpdated: null
-  };
+};
 
 async function fetchRandomRecipe() {
     const { data } = await axios.get("https://www.themealdb.com/api/json/v1/1/random.php");
