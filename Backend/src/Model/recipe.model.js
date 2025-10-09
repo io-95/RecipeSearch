@@ -9,7 +9,7 @@ const recipe = Joi.object({
     mealName: Joi.string()
         .required(),
 
-    instraction: Joi.string()
+    instructions: Joi.string()
         .alphanum()
         .required(),
 
