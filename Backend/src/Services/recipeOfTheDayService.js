@@ -30,7 +30,7 @@ async function fetchRandomRecipe() {
     }
 }
 
-export async function getRecipeOfTheDay() {
+async function getRecipeOfTheDay() {
     const ONE_DAY_MS = 24 * 60 * 60 * 1000;
   
     if (
@@ -48,7 +48,7 @@ export async function getRecipeOfTheDay() {
     return recipe;
 }
 
-export async function initRecipeScheduler() {
+async function initRecipeScheduler() {
     try {
         console.log("Fetching initial 'Recipe of the Day'...");
         recipeOfTheDayCache.data = await fetchRandomRecipe();
@@ -71,4 +71,4 @@ export async function initRecipeScheduler() {
     }, 24 * 60 * 60 * 1000);
 }
 
-module.exports = { initRecipeScheduler }
+module.exports = { initRecipeScheduler , getRecipeOfTheDay}
