@@ -10,7 +10,6 @@ const recipe = Joi.object({
         .required(),
 
     instructions: Joi.string()
-        .alphanum()
         .required(),
 
     thumbnail: Joi.string()
