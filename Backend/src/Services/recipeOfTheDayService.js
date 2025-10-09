@@ -8,16 +8,26 @@ let recipeOfTheDayCache = {
 };
 
 async function fetchRandomRecipe() {
-    const { data } = await axios.get("https://www.themealdb.com/api/json/v1/1/random.php");
-    const rawRecipe = data.meals[0];
-    const mapped = mapMealDbRecipe(rawRecipe);
+    try {
+        const { data } = await axios.get("https://www.themealdb.com/api/json/v1/1/random.php");
+        const rawRecipe = data.meals[0];
+        const mapped = mapMealDbRecipe(rawRecipe);
   
-    const { error, value } = recipeSchema.validate(mapped);
-    if (error) {
-      throw new Error(`Invalid recipe data: ${error.message}`);
+        const { error, value } = recipeSchema.validate(mapped);
+        if (error) {
+            throw new Error(`Invalid recipe data: ${error.message}`);
+        }
+  
+        return value;
+    } catch (err) {
+        if (err.response) {
+            throw new Error(`API request failed: ${err.response.status} ${err.response.statusText}`);
+        } else if (err.request) {
+            throw new Error("DB error");
+        } else {
+            throw new Error(`Request setup failed: ${err.message}`);
+        }
     }
-    
-  return value;
 }
 
 export async function getRecipeOfTheDay() {
