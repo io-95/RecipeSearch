@@ -7,7 +7,7 @@ let recipeOfTheDayCache = {
     lastUpdated: null
   };
 
-  async function fetchRandomRecipe() {
+async function fetchRandomRecipe() {
     const { data } = await axios.get("https://www.themealdb.com/api/json/v1/1/random.php");
     const rawRecipe = data.meals[0];
     const mapped = mapMealDbRecipe(rawRecipe);
