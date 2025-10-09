@@ -4,7 +4,7 @@ jest.mock("../../src/Services/recipeService", () => ({
     getRecipeOfTheDay: jest.fn(),
 }));
 
-const { getRecipeOfTheDay } = require("../../src/Services/recipeService");
+const { getRecipeOfTheDay } = require("../../src/Services/recipeOfTheDayService");
 
 describe("sendRecipeOfTheDay (Unit-Test)", () => {
     let req, res;
