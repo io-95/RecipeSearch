@@ -1,6 +1,6 @@
 const axios = require("axios");
-const { mapMealDbRecipe } = require("../models/recipe.mapper.js");
-const { recipeSchema } = require("../models/recipe.schema.js");
+const { mapMealDbRecipe } = require("../Model/recipe.mapper.js");
+const { recipe } = require("../Model/recipe.model.js");
 
 let recipeOfTheDayCache = {
     data: null,
