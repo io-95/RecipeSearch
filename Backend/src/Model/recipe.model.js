@@ -1,17 +1,15 @@
 const Joi = require('joi');
 
-const recipe = Joi.object({
+const recipeModel = Joi.object({
     id: Joi.string()
         .alphanum()
         .pattern(new RegExp('^[0-9]{5}$'))
         .required(),
 
     mealName: Joi.string()
-        .alphanum()
         .required(),
 
-    instraction: Joi.string()
-        .alphanum()
+    instructions: Joi.string()
         .required(),
 
     thumbnail: Joi.string()
@@ -28,10 +26,10 @@ const recipe = Joi.object({
     measure: Joi.array()
         .items(
             Joi.string()
-            .min(2)
+            .min(1)
         ).min(1)
         .max(20)
         .required()
 });
 
-module.exports = { recipe }
+module.exports = { recipeModel }
