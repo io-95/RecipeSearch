@@ -13,7 +13,7 @@ async function fetchRandomRecipe() {
         const rawRecipe = data.meals[0];
         const mapped = mapMealDbRecipe(rawRecipe);
   
-        const { error, value } = recipeSchema.validate(mapped);
+        const { error, value } = recipe.validate(mapped);
         if (error) {
             throw new Error(`Invalid recipe data: ${error.message}`);
         }
