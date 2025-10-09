@@ -12,7 +12,7 @@ async function fetchRandomRecipe() {
         const { data } = await axios.get("https://www.themealdb.com/api/json/v1/1/random.php");
         const rawRecipe = data.meals[0];
         const mapped = mapMealDbRecipe(rawRecipe);
-        console.log(mapped)
+
         const { error, value } = recipe.validate(mapped);
         if (error) {
             throw new Error(`Invalid recipe data: ${error.message}`);
