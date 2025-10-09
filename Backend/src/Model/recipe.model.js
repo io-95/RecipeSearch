@@ -7,7 +7,6 @@ const recipe = Joi.object({
         .required(),
 
     mealName: Joi.string()
-        .alphanum()
         .required(),
 
     instraction: Joi.string()
