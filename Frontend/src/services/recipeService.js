@@ -1,4 +1,4 @@
-import axios from "@/services/api"
+import api from "/api"
 
 export async function searchRecipes(querry) {
     
