@@ -1,7 +1,8 @@
 <template>
     <div class="header">
         <img class="logo" :src="logo" alt="logo">
-        <navigation-button class="button"></navigation-button>
+        <navigation-button class="button">Search Page</navigation-button>
+        <navigation-button class="button">Ingredient List</navigation-button>
     </div>
 </template>
 
