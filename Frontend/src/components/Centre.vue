@@ -15,6 +15,7 @@
 
 <script>
 import axios from "axios";
+import { getRecipeOfTheDay } from "../services/recipeService";
 
 export default {
     name: "Centre",
@@ -39,7 +40,9 @@ export default {
             .get(
                 'https://www.themealdb.com/api/json/v1/1/random.php'
             )
-            .then(response => (this.random = response.data.meals));       
+            .then(response => (this.random = response.data.meals));
+        
+        getRecipeOfTheDay();
     }
 };
 </script>
