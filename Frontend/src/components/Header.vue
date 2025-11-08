@@ -1,6 +1,6 @@
 <template>
     <div id="Header">
-        <h1>RecipeSearch</h1>
+        <img class="logo" :src="logo" alt="logo">
         <div id="menu" v-if="categories.length > 0">
             <a v-for="(category, i) in categories" :key="category.strCategory">
               <div v-on:click="listCategory(categories[i].strCategory)">{{categories[i].strCategory}}</div>
@@ -10,12 +10,14 @@
 </template>
 
 <script>
+import logo from '../assets/logo.png';
 import axios from "axios";
 
 export default {
   name: "Header",
   data() {
     return {
+      logo,
       categories: []
     };
   },
@@ -38,6 +40,10 @@ export default {
 </script>
 
 <style scoped>
+  .logo{
+    height: 104px;
+    width: auto;
+  }
   h1{
     font-family: "Century Gothic";
   }
@@ -58,5 +64,4 @@ export default {
   a:hover{
     background:  #a94c4c;
   }
-  /* https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp */
 </style>
