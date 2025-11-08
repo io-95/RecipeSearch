@@ -52,17 +52,6 @@ export default {
   }
 
   .button{
-    
-  }
-  #menu {
-    overflow: auto;
-    white-space: nowrap;
-  }
-  a {
-    display: inline-block;
-    padding: 15px;
-  }
-  a:hover{
-    background:  #a94c4c;
+
   }
 </style>
