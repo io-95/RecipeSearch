@@ -12,7 +12,7 @@ import Header from './components/Header.vue'
 import Centre from './components/Centre.vue'
 import List from './components/List.vue'
 import Popup from './components/Popup.vue'
-import { getHealth } from './services/recipeService'
+import { getHealth } from './services/healthService'
 
 export default {
   name: 'App',
