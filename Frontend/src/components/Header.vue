@@ -49,6 +49,7 @@ export default {
     background-color: #8c2222;
     color: white;
     display: flex;
+    align-items: center;
   }
 
   .button{
