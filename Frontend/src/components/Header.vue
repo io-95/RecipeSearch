@@ -11,7 +11,6 @@
 <script>
 import logo from '../assets/logo.png';
 import NavigationButton from './NavigationButton.vue';
-import axios from "axios";
 
 export default {
   name: "Header",
@@ -19,7 +18,6 @@ export default {
   data() {
     return {
       logo,
-      categories: []
     };
   },
   methods:{},
