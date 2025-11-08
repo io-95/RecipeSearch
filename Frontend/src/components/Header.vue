@@ -2,8 +2,8 @@
     <div class="header">
         <img class="logo" :src="logo" alt="logo">
         <div class="button">
-          <navigation-button>Search Page</navigation-button>
-          <navigation-button>Ingredient List</navigation-button>
+          <navigation-button :color="$route.name === 'App' ? 'primary' : 'secondary'">Search Page</navigation-button>
+          <navigation-button :color="$route.name === 'LandingPage' ? 'primary' : 'secondary'">Ingredient List</navigation-button>
         </div>
     </div>
 </template>
@@ -11,6 +11,9 @@
 <script>
 import logo from '../assets/logo.png';
 import NavigationButton from './NavigationButton.vue';
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 export default {
   name: "Header",
