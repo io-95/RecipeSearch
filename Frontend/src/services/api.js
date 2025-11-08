@@ -39,10 +39,11 @@ api.interceptors.response.use(
   }
 );
 
-export async function safeApiCall(requestFn) {
+// fullResponse is a optional parameter so method can return statuscode, etc. if necessary
+export async function safeApiCall(requestFn, { fullResponse = false } = {}) {
   try {
     const response = await requestFn();
-    return response.data;
+    return fullResponse? response : response.data;
   } catch (error) {
     handleApiError(error);
     throw error;
