@@ -1,16 +1,13 @@
 <template>
     <div id="Header">
         <img class="logo" :src="logo" alt="logo">
-        <div id="menu" v-if="categories.length > 0">
-            <a v-for="(category, i) in categories" :key="category.strCategory">
-              <div v-on:click="listCategory(categories[i].strCategory)">{{categories[i].strCategory}}</div>
-            </a>
-        </div>
+        <navigation-button></navigation-button>
     </div>
 </template>
 
 <script>
 import logo from '../assets/logo.png';
+import NavigationButton from './NavigationButton.vue';
 import axios from "axios";
 
 export default {
@@ -18,6 +15,7 @@ export default {
   data() {
     return {
       logo,
+      NavigationButton,
       categories: []
     };
   },
@@ -47,10 +45,10 @@ export default {
   }
 
   div {
-    background-color: rgb(128, 0, 0);
+    width: 100%;
+    background-color: #8c2222;
     color: white;
-    padding-top: 0%;
-    border-radius: 10px;
+    display: inline-block;
   }
   #menu {
     overflow: auto;
