@@ -1,8 +1,10 @@
 <template>
     <div class="header">
         <img class="logo" :src="logo" alt="logo">
-        <navigation-button class="button">Search Page</navigation-button>
-        <navigation-button class="button">Ingredient List</navigation-button>
+        <div class="button">
+          <navigation-button>Search Page</navigation-button>
+          <navigation-button>Ingredient List</navigation-button>
+        </div>
     </div>
 </template>
 
@@ -54,6 +56,9 @@ export default {
   }
 
   .button{
-
+    display: flex;
+    gap: 16px;
+    position: absolute;
+    right: 143px;
   }
 </style>
