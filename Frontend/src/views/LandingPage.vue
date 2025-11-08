@@ -1,7 +1,7 @@
 <template>
-    <div class="landing_page">
+    <div class="landing-page">
 
-    </div>
+</div>
 </template>
 
 <script>
@@ -11,7 +11,8 @@
 </script>
 
 <style>
-    .landing_page{
-        background-color: brown;
+    .landing-page{
+        min-height: 100vh;
+        background-color: #8c2222;
     }
 </style>
