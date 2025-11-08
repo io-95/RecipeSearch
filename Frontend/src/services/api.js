@@ -43,7 +43,7 @@ api.interceptors.response.use(
 export async function safeApiCall(requestFn, { fullResponse = false } = {}) {
   try {
     const response = await requestFn();
-    return fullResponse? response : response.data;
+    return fullResponse ? response : response.data;
   } catch (error) {
     handleApiError(error);
     throw error;

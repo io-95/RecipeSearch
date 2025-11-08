@@ -37,7 +37,7 @@ export default {
     }
   },
   mounted(){
-    getHealth()
+    getHealth();
   }
 }
 </script>
