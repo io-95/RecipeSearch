@@ -21,6 +21,8 @@
         min-height: 100vh;
         background-color: #8c2222;
         justify-content: flex-start;
+        display: flex;
+        flex-direction: column;   
         align-items: center; 
         padding-top: 234px;
     }

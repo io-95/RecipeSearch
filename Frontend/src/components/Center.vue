@@ -1,9 +1,11 @@
 <template>
     <div id="Centre">
         <div id="random" v-if="random.length > 0">
-            <h3>{{random[0].strMeal}}</h3>
             <img id="image" :src="random[0].strMealThumb" alt="Meal Thumbnail">
-            <p>{{random[0].strInstructions.substring(0, 500) + "..."}} <a :href="random[0].strYoutube" target="_blank">Zum Video</a></p>
+            <div>
+                <h3>{{random[0].strMeal}}</h3>
+                <p>{{random[0].strInstructions.substring(0, 200) + "..."}} <a :href="random[0].strYoutube" target="_blank">Zum Video</a></p>
+            </div>
         </div>
 
         <div id="search">
@@ -49,13 +51,12 @@ export default {
 
 <style scoped>
 #random {
-    background: #a94c4c;
-    color: white;
-    margin-top: 2%;
-    margin-left: 25%;
-    margin-right: 25%;
+    background: #fff6db;
+    color: #19191F;
+    display: flex;
+    width: 723px;
     padding: 10px;
-    border-radius: 7px;
+    border-radius: 16px;
 }
 
 p {
@@ -64,8 +65,9 @@ p {
 }
 
 #image {
-    max-width: 40%;
+    max-width: 120px;
     border-radius: 50%;
+    padding-right: 22px;
 }
 
 input {
