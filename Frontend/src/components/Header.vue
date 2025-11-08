@@ -22,22 +22,8 @@ export default {
       categories: []
     };
   },
-  methods:{
-    listCategory(category){
-      axios
-        .get(
-          'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category
-        ).then(response => (this.$emit('category', response.data.meals)))
-    }
-  },
-  mounted() {
-    axios
-      .get(
-        'https://www.themealdb.com/api/json/v1/1/list.php?c=list'
-      )
-      .then(response => (this.categories = response.data.meals));
-  }
-};
+  methods:{},
+  mounted() {},
 </script>
 
 <style scoped>
