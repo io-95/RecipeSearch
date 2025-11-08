@@ -43,10 +43,9 @@ export default {
   .logo{
     height: 104px;
     width: auto;
+    margin-left: 35px;
   }
-  h1{
-    font-family: "Century Gothic";
-  }
+
   div {
     background-color: rgb(128, 0, 0);
     color: white;
