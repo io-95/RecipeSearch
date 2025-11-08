@@ -12,10 +12,10 @@ import axios from "axios";
 
 export default {
   name: "Header",
+  components: { NavigationButton },
   data() {
     return {
       logo,
-      NavigationButton,
       categories: []
     };
   },
