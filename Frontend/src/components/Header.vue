@@ -1,7 +1,7 @@
 <template>
-    <div id="Header">
+    <div class="header">
         <img class="logo" :src="logo" alt="logo">
-        <navigation-button></navigation-button>
+        <navigation-button class="button"></navigation-button>
     </div>
 </template>
 
@@ -44,11 +44,15 @@ export default {
     margin-left: 35px;
   }
 
-  div {
+  .header {
     width: 100%;
     background-color: #8c2222;
     color: white;
-    display: inline-block;
+    display: flex;
+  }
+
+  .button{
+    
   }
   #menu {
     overflow: auto;
