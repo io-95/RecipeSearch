@@ -1,26 +1,18 @@
 <template>
   <div id="app">
     <Header v-on:category = emitResult($event) />
-    <Centre v-on:search = emitResult($event) />
-    <List :list = elements v-on:popup = emitId($event) />
-    <Popup :recipe = searchResult />
+
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
-import Centre from './components/Centre.vue'
-import List from './components/List.vue'
-import Popup from './components/Popup.vue'
 import { getHealth } from './services/healthService'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Centre,
-    List,
-    Popup
   },
   data() {
     return {
