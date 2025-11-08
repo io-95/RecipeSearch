@@ -1,13 +1,17 @@
 <template>
     <div class="landing-page">
         <h1 class="daily-recipe-header">Recipe of the Day</h1>
+        <Centre></Centre>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "LandingPage",
-    }
+import Centre from '../components/Centre.vue'
+
+export default {
+    name: "LandingPage",
+    components: { Centre }
+}
 </script>
 
 <style>
