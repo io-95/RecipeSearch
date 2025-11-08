@@ -17,8 +17,9 @@ async function sendRecipeList(req, res) {
         const recipeList = await getRecipeList(keyword);
         if(recipeList === null){
             res.status(404).json({ error: "Recipe not found" });
+        } else {
+            res.status(200).json(recipeList);
         }
-        res.status(200).json(recipeList);
     }catch(err){
         console.error("Database call failed:", err.message);
         res.status(503).json({ error: "Database unavailable" });

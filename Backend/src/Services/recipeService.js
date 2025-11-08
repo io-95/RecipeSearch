@@ -6,6 +6,9 @@ async function getRecipeList(keyword) {
     const recipeList = [];
     try{
         const { data } = await axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + keyword);
+        if (data.meals === null){
+            return null;
+        }
         data.meals.forEach((recipe) => {
             const mapped = mapMealDbRecipe(recipe);
 
