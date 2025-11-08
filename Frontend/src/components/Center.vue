@@ -18,7 +18,7 @@ import axios from "axios";
 import { getRecipeOfTheDay } from "../services/recipeService";
 
 export default {
-    name: "Centre",
+    name: "Center",
     data() {
         return {
             input: "",
