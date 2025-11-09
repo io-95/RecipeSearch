@@ -11,9 +11,6 @@
 <script>
 import logo from '../assets/logo.png';
 import NavigationButton from './NavigationButton.vue';
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
 
 export default {
   name: "Header",
