@@ -24,7 +24,6 @@ export default {
         async fetchDailyRecipe() {
             try {
                 this.dailyRecipe = await getRecipeOfTheDay();
-                console.log(this.dailyRecipe.data.mealName);
             } catch (err) {
                 console.error("Can not load recipe of the day: ", err);
             }
