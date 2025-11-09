@@ -61,18 +61,4 @@ p {
     border-radius: 50%;
     padding-right: 22px;
 }
-
-input {
-    margin: 15px;
-    width: 250px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-color: gray;
-}
-
-button {
-    padding: 9px;
-    color: white;
-    background-color: #c17171;
-}
 </style>
