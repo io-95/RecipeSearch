@@ -1,6 +1,6 @@
 <template>
     <div id="Centre">
-        <div id="random">
+        <div id="random" v-if="dailyRecipe.data">
             <img id="image" :src="dailyRecipe.data.thumbnail" alt="Meal Thumbnail">
             <div>
                 <h3>{{dailyRecipe.data.mealName}}</h3>
