@@ -1,5 +1,5 @@
 <template>
-    <v-btn class="navButton" rounded="xl" :color="color" height="40" width=auto>
+    <v-btn class="navButton" rounded="xl" :color="color" height="40" width=auto :click="switchPage">
         <slot />
     </v-btn>
 </template>
@@ -11,6 +11,15 @@
             color: {
                 type: String,
                 default: "primary"
+            },
+            targetPage: {
+                type: String,
+                default: ""
+            }
+        },
+        methods: {
+            switchPage(){
+                this.$router.push('/' + this.targetPage);
             }
         }
     }
