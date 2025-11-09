@@ -1,10 +1,10 @@
 <template>
     <div id="Centre">
-        <div id="random" v-if="dailyRecipe.length > 0">
-            <img id="image" :src="dailyRecipe[0].strMealThumb" alt="Meal Thumbnail">
+        <div id="random">
+            <img id="image" :src="dailyRecipe.data.thumbnail" alt="Meal Thumbnail">
             <div>
-                <h3>{{dailyRecipe[0].strMeal}}</h3>
-                <p>{{dailyRecipe[0].strInstructions.substring(0, 200) + "..."}}</p>
+                <h3>{{dailyRecipe.data.mealName}}</h3>
+                <p>{{dailyRecipe.data.instructions.substring(0, 200) + "..."}}</p>
             </div>
         </div>
 
@@ -35,16 +35,19 @@ export default {
                         'https://www.themealdb.com/api/json/v1/1/search.php?s=' + this.input
                     ).then(response => this.$emit('search', response.data.meals));
             }
-        }
+        },
+
+        async fetchDailyRecipe() {
+            try {
+                this.dailyRecipe = await getRecipeOfTheDay();
+                console.log(this.dailyRecipe.data.mealName);
+            } catch (err) {
+                console.error("Can not load recipe of the day: ", err);
+            }
+        }    
     },
-    mounted(){
-        axios
-            .get(
-                'https://www.themealdb.com/api/json/v1/1/random.php'
-            )
-            .then(response => (this.dailyRecipe = response.data.meals));
-        
-        getRecipeOfTheDay();
+    mounted(){     
+        this.fetchDailyRecipe();
     }
 };
 </script>
