@@ -37,6 +37,8 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 #random {
     background: #FFF6DB;
     color: #19191F;
@@ -51,6 +53,8 @@ export default {
 }
 
 p {
+    font-family: 'Roboto';
+    font-size: 16px;
     text-align: left;
 }
 
@@ -58,5 +62,10 @@ p {
     width: 120px;
     border-radius: 50%;
     padding-right: 22px;
+}
+
+h3{
+    font-size: 24;
+    font-family: 'Roboto';
 }
 </style>
