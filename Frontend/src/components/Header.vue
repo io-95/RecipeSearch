@@ -3,7 +3,7 @@
         <img class="logo" :src="logo" alt="logo">
         <div class="button">
           <navigation-button :color="$route.name === 'App' ? 'primary' : 'secondary'">Search Page</navigation-button>
-          <navigation-button :color="$route.name === 'LandingPage' ? 'primary' : 'secondary'">Ingredient List</navigation-button>
+          <navigation-button :color="$route.name === 'LandingPage' ? 'primary' : 'secondary'" targetPage="ingridients">Ingredient List</navigation-button>
         </div>
     </div>
 </template>

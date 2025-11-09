@@ -1,5 +1,5 @@
 <template>
-    <v-btn class="navButton" rounded="xl" :color="color" height="40" width=auto :click="switchPage">
+    <v-btn class="navButton" rounded="xl" :color="color" height="40" width=auto @click="switchPage">
         <slot />
     </v-btn>
 </template>
