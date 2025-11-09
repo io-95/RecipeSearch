@@ -2,4 +2,8 @@
     <h1>Search Results</h1>
 </template>
 
-<script></script>
+<script>
+    export default{
+        name: "SearchPage"
+    }
+</script>

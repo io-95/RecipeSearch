@@ -1,12 +1,13 @@
 <template>
   <div id="app">
     <Header v-on:category = emitResult($event) />
-    <LandingPage></LandingPage>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import router from './router/index'
 import LandingPage from './views/LandingPage.vue';
 import { getHealth } from './services/healthService'
 
@@ -14,7 +15,7 @@ export default {
   name: 'App',
   components: {
     Header,
-    LandingPage
+    router
   },
   data() {
     return {

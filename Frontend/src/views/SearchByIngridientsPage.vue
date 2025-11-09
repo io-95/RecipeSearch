@@ -2,4 +2,8 @@
     <h1>Search by ingridients</h1>
 </template>
 
-<script></script>
+<script>
+    export default{
+        name: "SearchByIngridientsPage"
+    }
+</script>
