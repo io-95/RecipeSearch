@@ -1,10 +1,10 @@
 <template>
     <div id="Centre">
-        <div id="random" v-if="random.length > 0">
-            <img id="image" :src="random[0].strMealThumb" alt="Meal Thumbnail">
+        <div id="random" v-if="dailyRecipe.length > 0">
+            <img id="image" :src="dailyRecipe[0].strMealThumb" alt="Meal Thumbnail">
             <div>
-                <h3>{{random[0].strMeal}}</h3>
-                <p>{{random[0].strInstructions.substring(0, 200) + "..."}} <a :href="random[0].strYoutube" target="_blank">Zum Video</a></p>
+                <h3>{{dailyRecipe[0].strMeal}}</h3>
+                <p>{{dailyRecipe[0].strInstructions.substring(0, 200) + "..."}}</p>
             </div>
         </div>
 
@@ -24,7 +24,7 @@ export default {
     data() {
         return {
             input: "",
-            random: []
+            dailyRecipe: []
         };
     },
     methods: {
@@ -42,7 +42,7 @@ export default {
             .get(
                 'https://www.themealdb.com/api/json/v1/1/random.php'
             )
-            .then(response => (this.random = response.data.meals));
+            .then(response => (this.dailyRecipe = response.data.meals));
         
         getRecipeOfTheDay();
     }
@@ -51,21 +51,24 @@ export default {
 
 <style scoped>
 #random {
-    background: #fff6db;
+    background: #FFF6DB;
     color: #19191F;
     display: flex;
     width: 723px;
+    height: auto;
     padding: 10px;
     border-radius: 16px;
+    padding: 32px;
+    margin-top: 16px;
+    margin-bottom: 79px;
 }
 
 p {
     text-align: left;
-    
 }
 
 #image {
-    max-width: 120px;
+    width: 120px;
     border-radius: 50%;
     padding-right: 22px;
 }
