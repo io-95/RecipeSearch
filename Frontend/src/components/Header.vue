@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <img class="logo" :src="logo" alt="logo">
+        <img class="logo" :src="logo" alt="logo" @click="returnToLandingPage">
         <div class="button">
           <navigation-button :color="$route.name === 'App' ? 'primary' : 'secondary'">Search Page</navigation-button>
           <navigation-button :color="$route.name === 'LandingPage' ? 'primary' : 'secondary'" targetPage="ingridients">Ingredient List</navigation-button>
@@ -20,7 +20,11 @@ export default {
       logo,
     };
   },
-  methods:{},
+  methods:{
+    returnToLandingPage(){
+      this.$router.push('/');
+    }
+  },
   mounted() {}
 }
 </script>
