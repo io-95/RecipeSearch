@@ -4,6 +4,6 @@
 
 <script>
     export default{
-        name: "SearchPage"
+        name: "SearchResultPage"
     }
 </script>

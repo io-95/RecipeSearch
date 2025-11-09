@@ -8,7 +8,6 @@
 <script>
 import Header from './components/Header.vue'
 import router from './router/index'
-import LandingPage from './views/LandingPage.vue';
 import { getHealth } from './services/healthService'
 
 export default {
@@ -40,6 +39,7 @@ export default {
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  
+  background-color: #8c2222;
+  min-height: 100vh;
 }
 </style>
