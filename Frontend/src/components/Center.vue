@@ -11,14 +11,12 @@
 </template>
 
 <script>
-import axios from "axios";
 import { getRecipeOfTheDay } from "../services/recipeService";
 
 export default {
     name: "Center",
     data() {
         return {
-            input: "",
             dailyRecipe: []
         };
     },
