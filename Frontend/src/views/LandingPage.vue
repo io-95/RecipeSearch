@@ -20,8 +20,6 @@
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
     .landing-page{
-        min-height: 100vh;
-        background-color: #8c2222;
         justify-content: flex-start;
         display: flex;
         flex-direction: column;   
