@@ -1,7 +1,7 @@
 <template>
     <div class="searchBarDiv" :style="{width: searchBarWidth + 'px'}">
         <input class="searchInput" placeholder="search for recipe..."></input>
-        <v-btn class="searchButton" density="compact" icon="mdi-magnify"></v-btn>
+        <v-btn class="searchButton" density="compact" icon="mdi-magnify" @click="switchToSearchResult"></v-btn>
     </div>
 </template>
 
@@ -20,7 +20,10 @@ export default {
 
         };
     },
-    methods: {  
+    methods: {
+        switchToSearchResult(){
+            this.$router.push('/searchResults');
+        }  
     },
     mounted(){     
     }
