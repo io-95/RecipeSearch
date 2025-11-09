@@ -7,11 +7,6 @@
                 <p>{{dailyRecipe.data.instructions.substring(0, 200) + "..."}}</p>
             </div>
         </div>
-
-        <div id="search">
-            <input v-model="input" type="text" name="searchInput" placeholder="Type a Keyword">
-            <button v-if="input != null" v-on:click="search()" id="searchButton" >search</button>
-        </div>
     </div>
 </template>
 
@@ -28,15 +23,6 @@ export default {
         };
     },
     methods: {
-        search() {
-            if(this.input.length > 0){
-                axios
-                    .get(
-                        'https://www.themealdb.com/api/json/v1/1/search.php?s=' + this.input
-                    ).then(response => this.$emit('search', response.data.meals));
-            }
-        },
-
         async fetchDailyRecipe() {
             try {
                 this.dailyRecipe = await getRecipeOfTheDay();
