@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
+import vuetify from 'vite-plugin-vuetify'
+
 import path from 'path'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), vuetify()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
@@ -13,11 +15,5 @@ export default defineConfig({
   server: {
     port: 5173,
     open: true
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './tests/setup.js',
-    css: false,
   }
 })
