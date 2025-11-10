@@ -1,62 +1,53 @@
 <template>
-    <div id="Header">
-        <h1>RecipeSearch</h1>
-        <div id="menu" v-if="categories.length > 0">
-            <a v-for="(category, i) in categories" :key="category.strCategory">
-              <div v-on:click="listCategory(categories[i].strCategory)">{{categories[i].strCategory}}</div>
-            </a>
+    <div class="header">
+        <img class="logo" :src="logo" alt="logo" @click="returnToLandingPage">
+        <div class="button">
+          <navigation-button :color="$route.name === 'LandingPage' ? 'primary' : 'secondary'">Search Page</navigation-button>
+          <navigation-button :color="$route.name === 'IngridientsPage' ? 'primary' : 'secondary'" targetPage="ingridients">Ingredient List</navigation-button>
         </div>
     </div>
 </template>
 
 <script>
-import axios from "axios";
+import logo from '../assets/logo.png';
+import NavigationButton from './NavigationButton.vue';
 
 export default {
   name: "Header",
+  components: { NavigationButton },
   data() {
     return {
-      categories: []
+      logo,
     };
   },
   methods:{
-    listCategory(category){
-      axios
-        .get(
-          'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category
-        ).then(response => (this.$emit('category', response.data.meals)))
+    returnToLandingPage(){
+      this.$router.push('/');
     }
   },
-  mounted() {
-    axios
-      .get(
-        'https://www.themealdb.com/api/json/v1/1/list.php?c=list'
-      )
-      .then(response => (this.categories = response.data.meals));
-  }
-};
+  mounted() {}
+}
 </script>
 
 <style scoped>
-  h1{
-    font-family: "Century Gothic";
+  .logo{
+    height: 104px;
+    width: auto;
+    margin-left: 35px;
   }
-  div {
-    background-color: rgb(128, 0, 0);
+
+  .header {
+    width: 100%;
+    background-color: #8c2222;
     color: white;
-    padding-top: 0%;
-    border-radius: 10px;
+    display: flex;
+    align-items: center;
   }
-  #menu {
-    overflow: auto;
-    white-space: nowrap;
+
+  .button{
+    display: flex;
+    gap: 16px;
+    position: absolute;
+    right: 143px;
   }
-  a {
-    display: inline-block;
-    padding: 15px;
-  }
-  a:hover{
-    background:  #a94c4c;
-  }
-  /* https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp */
 </style>

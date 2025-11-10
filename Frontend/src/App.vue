@@ -1,26 +1,20 @@
 <template>
   <div id="app">
     <Header v-on:category = emitResult($event) />
-    <Centre v-on:search = emitResult($event) />
-    <List :list = elements v-on:popup = emitId($event) />
-    <Popup :recipe = searchResult />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
-import Centre from './components/Centre.vue'
-import List from './components/List.vue'
-import Popup from './components/Popup.vue'
+import router from './router/index'
 import { getHealth } from './services/healthService'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Centre,
-    List,
-    Popup
+    router
   },
   data() {
     return {
@@ -45,6 +39,7 @@ export default {
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
+  background-color: #8c2222;
+  min-height: 100vh;
 }
 </style>

@@ -1,9 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import App from '../App.vue'
+import LandingPage from '../views/LandingPage.vue'
+import SearchResultPage from '../views/SearchResultPage.vue'
+import SearchByIngridientsPage from '../views/SearchByIngridientsPage.vue'
 
 const routes = [
-  { path: '/', name: 'App', component: App }
+  { path: '/', name: 'LandingPage', component: LandingPage },
+  { path: '/searchResults', name: 'SearchResultPage', component: SearchResultPage },
+  { path: '/ingridients', name: 'IngridientsPage', component: SearchByIngridientsPage }
 ]
 
 const router = createRouter({
