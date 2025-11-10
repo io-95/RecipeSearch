@@ -60,6 +60,6 @@ export default {
     .searchButton{
         background-color: #8B3C3C;
         color: white;
-        margin-right: 7px;
+        margin-right: 5px;
     }
 </style>
