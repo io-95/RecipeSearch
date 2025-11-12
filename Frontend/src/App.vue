@@ -1,19 +1,22 @@
 <template>
-  <div id="app">
-    <Header v-on:category = emitResult($event) />
+  <v-app id="app">
+    <!--<Header  /> -->
+    <MobileHeader></MobileHeader>
     <router-view></router-view>
-  </div>
+  </v-app>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import router from './router/index'
 import { getHealth } from './services/healthService'
+import MobileHeader from './components/MobileHeader.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
+    MobileHeader,
     router
   },
   data() {
