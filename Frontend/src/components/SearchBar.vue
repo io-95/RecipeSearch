@@ -1,5 +1,12 @@
 <template>
-    <div class="searchBarDiv" :style="{width: searchBarWidth + 'px'}">
+    <div 
+        class="searchBarDiv" 
+        :style="{
+            width: searchBarWidth ? searchBarWidth + 'px' : '100%',
+            maxWidth: '100%',
+            minWidth: '353px'
+        }"
+    >
         <input class="searchInput" placeholder="search for recipe..."></input>
         <v-btn class="searchButton" density="compact" icon="mdi-magnify" @click="switchToSearchResult"></v-btn>
     </div>
@@ -12,7 +19,6 @@ export default {
         props: {
         searchBarWidth: {
             type: Number,
-            default: 500
         }
     },
     data() {
@@ -32,12 +38,16 @@ export default {
 
 <style scoped>
     .searchBarDiv{
+        width: 100%;
+        min-width: 353px;
+        max-width: 500px;
         background: #FFF6DB;
         height: 40px;
         border-radius: 9999px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        box-sizing: border-box;
     }
 
     .searchInput{
