@@ -57,10 +57,6 @@ p {
     font-size: 16px;
 }
 
-.box-content{
-    display: flex;
-}
-
 .image {
     height: 120px;
     width: 120px;
@@ -87,6 +83,7 @@ h3{
     }
 
     .box-content {
+        display: flex;
         text-align: center;
         flex-direction: column;
         gap: 9px;
