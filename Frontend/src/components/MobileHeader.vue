@@ -37,18 +37,26 @@ export default {
 </script>
 
 <style scoped>
-.overlay {
-  position: fixed;
-  top: 64px;
-  left: 0;
-  width: 100%;
-  height: calc(100vh - 64px);
-  background-color: #8c2222;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 998;
-}
+  .overlay {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background-color: #8c2222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 998;
+  }
+
+  .button{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    top: 85px;
+  }
 
   .burger-menu{
     margin-right: 10px;
