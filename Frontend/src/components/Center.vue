@@ -2,7 +2,7 @@
     <div class="Centre">
         <div class="random" v-if="dailyRecipe.data">
             <img class="image" :src="dailyRecipe.data.thumbnail" alt="Meal Thumbnail">
-            <div class="">
+            <div class="box-content">
                 <h3>{{dailyRecipe.data.mealName}}</h3>
                 <p>{{dailyRecipe.data.instructions.substring(0, 200) + "..."}}</p>
             </div>
@@ -43,12 +43,20 @@ export default {
         flex-direction: column;
         align-items: center;
     }
+
+    .image{
+        align-items: center;
+    }
+
+    .box-content {
+        text-align: center;
+    }
 }
 
 .random {
     background: #FFF6DB;
     color: #19191F;
-    display: flex;
+    display: block;
     width: 100%;
     min-width: 353px;
     max-width: 723px;
