@@ -38,11 +38,20 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@media (max-width: 500px)  {
+    #random {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 #random {
     background: #FFF6DB;
     color: #19191F;
     display: flex;
-    width: 723px;
+    width: 100%;
+    min-width: 353px;
+    max-width: 723px;
     height: auto;
     padding: 10px;
     border-radius: 16px;
@@ -58,9 +67,10 @@ p {
 }
 
 #image {
+    height: 120px;
     width: 120px;
     border-radius: 50%;
-    padding-right: 22px;
+    margin-right: 22px;    
 }
 
 h3{
