@@ -2,9 +2,16 @@
     <v-app-bar class="header" color="tertiary" :elevation="0">
         <img class="logo" :src="logo" alt="logo" @click="returnToLandingPage"></img>
         <template v-slot:append>
-            <v-app-bar-nav-icon class="burger-menu"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon class="burger-menu" @click="drawer = !drawer"></v-app-bar-nav-icon>
         </template>
     </v-app-bar>
+
+  <div v-if="drawer" class="overlay">
+    <div class="overlay-content">
+      <button class="btn save">Speichern</button>
+      <button class="btn cancel">Abbrechen</button>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -15,6 +22,7 @@ export default {
   components: {},
   data() {
     return {
+      drawer: false,
       logo,
     };
   },
@@ -28,12 +36,32 @@ export default {
 </script>
 
 <style scoped>
+.overlay {
+  position: fixed;
+  top: 64px; /* unter dem Header */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 64px);
+  background-color: #8c2222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
   .burger-menu{
     margin-right: 10px;
   }
 
   .logo{
-    height: 104px;
+    height: 100%;
     width: auto;
     margin-left: 13px;
   }
