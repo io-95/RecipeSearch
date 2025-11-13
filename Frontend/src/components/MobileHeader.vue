@@ -39,7 +39,7 @@ export default {
 <style scoped>
 .overlay {
   position: fixed;
-  top: 64px; /* unter dem Header */
+  top: 64px;
   left: 0;
   width: 100%;
   height: calc(100vh - 64px);
