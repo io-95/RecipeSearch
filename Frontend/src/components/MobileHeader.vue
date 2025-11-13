@@ -8,8 +8,8 @@
 
   <div v-if="drawer" class="overlay">
     <div class="button">
-      <navigation-button :color="$route.name === 'LandingPage' ? 'primary' : 'secondary'">Search Page</navigation-button>
-      <navigation-button :color="$route.name === 'IngridientsPage' ? 'primary' : 'secondary'" targetPage="ingridients">Ingredient List</navigation-button>
+      <navigation-button :color="$route.name === 'LandingPage' ? 'primary' : 'secondary'" @click="drawer = false">Search Page</navigation-button>
+      <navigation-button :color="$route.name === 'IngridientsPage' ? 'primary' : 'secondary'" targetPage="ingridients" @click="drawer = false">Ingredient List</navigation-button>
     </div>
   </div>
 </template>
