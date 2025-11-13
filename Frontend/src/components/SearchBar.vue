@@ -1,10 +1,9 @@
 <template>
     <div 
         class="searchBarDiv" 
+        :class="{ mobile: isMobile }"
         :style="{
-            width: searchBarWidth ? searchBarWidth + 'px' : '100%',
-            maxWidth: '100%',
-            minWidth: '353px'
+            width: !isMobile && searchBarWidth ? searchBarWidth + 'px' : '',
         }"
     >
         <input class="searchInput" placeholder="search for recipe..."></input>
@@ -23,31 +22,41 @@ export default {
     },
     data() {
         return {
-
+            isMobile: false
         };
     },
     methods: {
         switchToSearchResult(){
             this.$router.push('/searchResults');
-        }  
+        },
+        checkViewport() {
+            this.isMobile = window.innerWidth <= 500
+        }
     },
-    mounted(){     
-    }
+    mounted() {
+        this.checkViewport()
+        window.addEventListener('resize', this.checkViewport)
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.checkViewport)
+    },
 };
 </script>
 
 <style scoped>
-    .searchBarDiv{
-        width: 100%;
-        min-width: 353px;
-        max-width: 500px;
+    .searchBarDiv {
         background: #FFF6DB;
         height: 40px;
         border-radius: 9999px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        box-sizing: border-box;
+        min-width: 353px;
+    }
+
+    .searchBarDiv.mobile {
+        margin: 0 18px;
+        width: calc(100% - 36px);
     }
 
     .searchInput{
@@ -71,5 +80,12 @@ export default {
         background-color: #8B3C3C;
         color: white;
         margin-right: 5px;
+    }
+
+    @media (max-width: 500px)  {
+        .searchBarDiv{
+            width: 90.5%;
+            margin-inline: 17.5px;
+        }
     }
 </style>
