@@ -38,21 +38,6 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-@media (max-width: 500px)  {
-    .random {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .image{
-        align-items: center;
-    }
-
-    .box-content {
-        text-align: center;
-    }
-}
-
 .random {
     background: #FFF6DB;
     color: #19191F;
@@ -84,4 +69,22 @@ h3{
     font-size: 24;
     font-family: 'Roboto';
 }
+
+@media (max-width: 500px)  {
+    .random {
+        flex-direction: column;
+        align-items: center;
+        width: 90.5%;
+        margin-inline: 17.5px;
+    }
+
+    .image{
+        align-items: center;
+    }
+
+    .box-content {
+        text-align: center;
+    }
+}
+
 </style>
