@@ -71,7 +71,6 @@ export default {
 p {
     font-family: 'Roboto';
     font-size: 16px;
-    text-align: left;
 }
 
 .image {
