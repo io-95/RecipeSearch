@@ -1,8 +1,8 @@
 <template>
-    <div id="Centre">
-        <div id="random" v-if="dailyRecipe.data">
-            <img id="image" :src="dailyRecipe.data.thumbnail" alt="Meal Thumbnail">
-            <div>
+    <div class="Centre">
+        <div class="random" v-if="dailyRecipe.data">
+            <img class="image" :src="dailyRecipe.data.thumbnail" alt="Meal Thumbnail">
+            <div class="">
                 <h3>{{dailyRecipe.data.mealName}}</h3>
                 <p>{{dailyRecipe.data.instructions.substring(0, 200) + "..."}}</p>
             </div>
@@ -39,13 +39,13 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 @media (max-width: 500px)  {
-    #random {
+    .random {
         flex-direction: column;
         align-items: center;
     }
 }
 
-#random {
+.random {
     background: #FFF6DB;
     color: #19191F;
     display: flex;
@@ -66,7 +66,7 @@ p {
     text-align: left;
 }
 
-#image {
+.image {
     height: 120px;
     width: 120px;
     border-radius: 50%;
