@@ -2,7 +2,7 @@
     <div class="landing-page">
         <h1 class="daily-recipe-header">Recipe of the Day</h1>
         <Center></Center>
-        <SearchBar></SearchBar>
+        <SearchBar :search-bar-width="500"></SearchBar>
     </div>
 </template>
 
