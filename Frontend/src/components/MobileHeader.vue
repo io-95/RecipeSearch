@@ -7,19 +7,20 @@
     </v-app-bar>
 
   <div v-if="drawer" class="overlay">
-    <div class="overlay-content">
-      <button class="btn save">Speichern</button>
-      <button class="btn cancel">Abbrechen</button>
+    <div class="button">
+      <navigation-button :color="$route.name === 'LandingPage' ? 'primary' : 'secondary'">Search Page</navigation-button>
+      <navigation-button :color="$route.name === 'IngridientsPage' ? 'primary' : 'secondary'" targetPage="ingridients">Ingredient List</navigation-button>
     </div>
   </div>
 </template>
 
 <script>
 import logo from '../assets/logo.png';
+import NavigationButton from './NavigationButton.vue';
 
 export default {
   name: "MobileHeader",
-  components: {},
+  components: { NavigationButton },
   data() {
     return {
       drawer: false,
