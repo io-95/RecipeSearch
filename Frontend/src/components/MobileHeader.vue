@@ -50,13 +50,6 @@ export default {
   z-index: 998;
 }
 
-.overlay-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
   .burger-menu{
     margin-right: 10px;
   }
