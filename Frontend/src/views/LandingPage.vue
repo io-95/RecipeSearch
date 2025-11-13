@@ -24,7 +24,7 @@
         display: flex;
         flex-direction: column;   
         align-items: center; 
-        padding-top: 234px;
+        margin-top: 234px;
     }
 
     .daily-recipe-header{
@@ -32,5 +32,9 @@
         color: white;
         font-family: 'Great Vibes', cursive;
         font-size: 48px;
+    }
+
+    @media (max-width: 500px)  {
+        
     }
 </style>
