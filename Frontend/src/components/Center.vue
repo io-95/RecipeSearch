@@ -50,7 +50,6 @@ export default {
     border-radius: 16px;
     padding: 32px;
     margin-top: 16px;
-    margin-bottom: 79px;
 }
 
 p {
