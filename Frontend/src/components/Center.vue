@@ -56,7 +56,7 @@ export default {
 .random {
     background: #FFF6DB;
     color: #19191F;
-    display: block;
+    display: flex;
     width: 100%;
     min-width: 353px;
     max-width: 723px;
