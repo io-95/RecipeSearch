@@ -55,6 +55,7 @@ export default {
 p {
     font-family: 'Roboto';
     font-size: 16px;
+    margin-top: 9px;
 }
 
 .image {
