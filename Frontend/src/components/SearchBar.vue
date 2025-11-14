@@ -55,7 +55,7 @@ export default {
     }
 
     .searchBarDiv.mobile {
-        margin: 0 18px;
+        margin-inline: 17,5px;
         width: calc(100% - 36px);
     }
 
@@ -80,12 +80,5 @@ export default {
         background-color: #8B3C3C;
         color: white;
         margin-right: 5px;
-    }
-
-    @media (max-width: 500px)  {
-        .searchBarDiv{
-            width: 90.5%;
-            margin-inline: 17.5px;
-        }
     }
 </style>
