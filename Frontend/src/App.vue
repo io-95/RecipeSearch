@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
-    <!--<Header  /> -->
-    <MobileHeader></MobileHeader>
+    <Header v-if="isDesktop"></Header> 
+    <MobileHeader v-else></MobileHeader>
     <router-view></router-view>
   </v-app>
 </template>
@@ -11,6 +11,9 @@ import Header from './components/Header.vue'
 import router from './router/index'
 import { getHealth } from './services/healthService'
 import MobileHeader from './components/MobileHeader.vue'
+import { useDisplay } from 'vuetify'
+import { computed } from 'vue'
+
 
 export default {
   name: 'App',
@@ -19,10 +22,17 @@ export default {
     MobileHeader,
     router
   },
+  setup(){
+    const isMobile = computed(() => display.xs.value)
+    const isDesktop = computed(() => display.lgAndUp.value)
+
+    const display = useDisplay()
+    return { display, isDesktop, isMobile }
+  },
   data() {
     return {
       elements: [],
-      searchResult: []
+      searchResult: [],
     };
   },
   methods: {
