@@ -2,7 +2,7 @@
     <div class="landing-page">
         <h1 class="daily-recipe-header">Recipe of the Day</h1>
         <Center></Center>
-        <SearchBar></SearchBar>
+        <SearchBar class="search-bar" :search-bar-width="500"></SearchBar>
     </div>
 </template>
 
@@ -24,7 +24,7 @@
         display: flex;
         flex-direction: column;   
         align-items: center; 
-        padding-top: 234px;
+        margin-top: 234px;
     }
 
     .daily-recipe-header{
@@ -32,5 +32,19 @@
         color: white;
         font-family: 'Great Vibes', cursive;
         font-size: 48px;
+    }
+
+    .search-bar{
+        margin-top: 79px;
+    }
+
+    @media (max-width: 500px)  {
+        .landing-page{
+            margin-top: 170px;
+        }
+
+        .search-bar{
+            margin-top: 76px;
+        }
     }
 </style>

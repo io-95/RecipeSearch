@@ -1,5 +1,11 @@
 <template>
-    <div class="searchBarDiv" :style="{width: searchBarWidth + 'px'}">
+    <div 
+        class="searchBarDiv" 
+        :class="{ mobile: isMobile }"
+        :style="{
+            width: !isMobile && searchBarWidth ? searchBarWidth + 'px' : '',
+        }"
+    >
         <input class="searchInput" placeholder="search for recipe..."></input>
         <v-btn class="searchButton" density="compact" icon="mdi-magnify" @click="switchToSearchResult"></v-btn>
     </div>
@@ -12,32 +18,45 @@ export default {
         props: {
         searchBarWidth: {
             type: Number,
-            default: 500
         }
     },
     data() {
         return {
-
+            isMobile: false
         };
     },
     methods: {
         switchToSearchResult(){
             this.$router.push('/searchResults');
-        }  
+        },
+        checkViewport() {
+            this.isMobile = window.innerWidth <= 500
+        }
     },
-    mounted(){     
-    }
+    mounted() {
+        this.checkViewport()
+        window.addEventListener('resize', this.checkViewport)
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.checkViewport)
+    },
 };
 </script>
 
 <style scoped>
-    .searchBarDiv{
+    .searchBarDiv {
         background: #FFF6DB;
         height: 40px;
         border-radius: 9999px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        min-width: 353px;
+    }
+
+    .searchBarDiv.mobile {
+        margin-inline: 17,5px;
+        width: calc(100% - 36px);
     }
 
     .searchInput{
