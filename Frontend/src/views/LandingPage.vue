@@ -1,18 +1,18 @@
 <template>
     <div class="landing-page">
         <h1 class="daily-recipe-header">Recipe of the Day</h1>
-        <Center></Center>
+        <RecipeOfTheDay></RecipeOfTheDay>
         <SearchBar class="search-bar" :search-bar-width="500"></SearchBar>
     </div>
 </template>
 
 <script>
-    import Center from '../components/Center.vue'
+    import RecipeOfTheDay from '../components/RecipeOfTheDay.vue'
     import SearchBar from '../components/SearchBar.vue';
 
     export default {
         name: "LandingPage",
-        components: { Center, SearchBar }
+        components: { RecipeOfTheDay, SearchBar }
     }
 </script>
 

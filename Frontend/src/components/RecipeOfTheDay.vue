@@ -14,7 +14,7 @@
 import { getRecipeOfTheDay } from "../services/recipeService";
 
 export default {
-    name: "Center",
+    name: "RecipeOfTheDay",
     data() {
         return {
             dailyRecipe: []
