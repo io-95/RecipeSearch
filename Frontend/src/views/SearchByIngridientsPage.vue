@@ -1,5 +1,5 @@
 <template>
-    <SearchByIngredients></SearchByIngredients>
+    <SearchByIngredients class="SearchByIngredients"></SearchByIngredients>
 </template>
 
 <script>
@@ -10,3 +10,10 @@
         components: { SearchByIngredients }
     }
 </script>
+
+<style>
+    .SearchByIngredients{
+        align-self: center;
+        margin-top: 41px;
+    }
+</style>
