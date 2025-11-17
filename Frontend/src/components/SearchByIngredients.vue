@@ -15,5 +15,8 @@
         width: 1086px;
         height: auto;
         background-color: #FFF6DB;
+        border-radius: 16px;
+        display: flex;
+        justify-content: center;
     }
 </style>
