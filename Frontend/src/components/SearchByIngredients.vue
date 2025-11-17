@@ -4,7 +4,7 @@
 
         <div class="SearchSection">
             <input class="searchInput" placeholder="Enter an ingredient (e.g., chicken, basil, tomatoes)"></input>
-            <v-btn rounded="xl" color="tertiary" height="40" width="90">Add</v-btn>
+            <v-btn rounded="xl" color="tertiary" height="40" width="96">Add</v-btn>
         </div>
     </div>
 </template>
@@ -33,5 +33,20 @@
         font-family: 'Lora';
         font-size: 36px;
         margin-top: 90px;
+    }
+
+    .SearchSection{
+        margin-top: 55px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .searchInput{
+        background-color: white;
+        border-color: #dee1e6;
+        border-radius: 9999px;
+        padding: 10px;
+        padding-left: 27px;
+        width: 656px;
     }
 </style>
