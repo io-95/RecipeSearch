@@ -1,12 +1,12 @@
 <template>
-    <SearchByIngridients></SearchByIngridients>
+    <SearchByIngredients></SearchByIngredients>
 </template>
 
 <script>
-    import SearchByIngridients from '../components/SearchByIngridients.vue';
+    import SearchByIngredients from '../components/SearchByIngredients.vue';
 
     export default{
         name: "SearchByIngridientsPage",
-        components: { SearchByIngridients }
+        components: { SearchByIngredients }
     }
 </script>

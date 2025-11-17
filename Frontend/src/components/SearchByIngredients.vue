@@ -6,7 +6,7 @@
 
 <script>
     export default{
-        name: "SearchByIngridients"
+        name: "SearchByIngredients"
     }
 </script>
 
