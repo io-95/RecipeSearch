@@ -8,7 +8,7 @@
         </div>
 
         <div class="ChipsField">
-            <h4 class="NoIngredientsText">No ingredients added yet.</h4>
+            <h4 class="NoIngredientsText" v-if="!ingredientsList">No ingredients added yet.</h4>
         </div>
     </div>
 </template>
