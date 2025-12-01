@@ -15,7 +15,7 @@
             <template v-if="ingredientsList.length > 0">
                 <v-chip
                     v-for="(item, index) in ingredientsList"
-                    :key="index"
+                    :key="item"
                     closable
                     @click:close="removeIngredient(index)"
             >
