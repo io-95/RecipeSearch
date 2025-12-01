@@ -6,6 +6,10 @@
             <input class="searchInput" placeholder="Enter an ingredient (e.g., chicken, basil, tomatoes)"></input>
             <v-btn rounded="xl" color="tertiary" height="40" width="96">Add</v-btn>
         </div>
+
+        <div class="ChipsField">
+
+        </div>
     </div>
 </template>
 
@@ -48,5 +52,13 @@
         padding: 10px;
         padding-left: 27px;
         width: 656px;
+    }
+
+    .ChipsField{
+        margin-top: 32px;
+        background-color: #fafafb;
+        border-color: #f3f4f6;
+        width: 768px;
+        height: 60px;
     }
 </style>
