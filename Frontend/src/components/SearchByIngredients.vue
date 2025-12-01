@@ -8,19 +8,21 @@
         </div>
 
         <div class="ChipsField">
-
+            <h4 class="NoIngredientsText">No ingredients added yet.</h4>
         </div>
     </div>
 </template>
 
 <script>
     export default{
-        name: "SearchByIngredients"
+        name: "SearchByIngredients",
+        ingredientsList: []
     }
 </script>
 
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
     .Center{
         width: 1086px;
@@ -58,7 +60,17 @@
         margin-top: 32px;
         background-color: #fafafb;
         border-color: #f3f4f6;
+        border-radius: 10px;
         width: 768px;
-        height: 60px;
+        height: auto;
+    }
+
+    .NoIngredientsText{
+        color: #565D6D;
+        font-size: 16px;
+        font-family: 'Roboto';
+        margin-top: 27px;
+        margin-bottom: 27px;
+        margin-left: 17px;
     }
 </style>
