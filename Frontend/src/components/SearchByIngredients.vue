@@ -18,9 +18,9 @@
                     :key="item"
                     closable
                     @click:close="removeIngredient(index)"
-            >
-                {{ item }}
-            </v-chip>
+                >
+                    {{ item }}
+                </v-chip>
             </template>
 
             <h4 class="NoIngredientsText" v-else>
