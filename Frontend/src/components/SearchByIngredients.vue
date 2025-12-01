@@ -4,11 +4,24 @@
 
         <div class="SearchSection">
             <input class="searchInput" placeholder="Enter an ingredient (e.g., chicken, basil, tomatoes)"></input>
-            <v-btn rounded="xl" color="tertiary" height="40" width="96">Add</v-btn>
+            <v-btn rounded="xl" color="tertiary" height="40" width="96" @click="addIngredient">Add</v-btn>
         </div>
 
         <div class="ChipsField">
-            <h4 class="NoIngredientsText" v-if="!ingredientsList">No ingredients added yet.</h4>
+            <template v-if="ingredientsList.length > 0">
+                <v-chip
+                    v-for="(item, index) in ingredientsList"
+                    :key="index"
+                    closable
+                    @click:close="removeIngredient(index)"
+            >
+                {{ item }}
+            </v-chip>
+            </template>
+            
+            <h4 class="NoIngredientsText" v-else>
+                No ingredients added yet.
+            </h4>
         </div>
     </div>
 </template>
@@ -16,7 +29,25 @@
 <script>
     export default{
         name: "SearchByIngredients",
-        ingredientsList: []
+    
+        data(){
+            return{
+                ingredientInput: "",
+                ingredientsList: []
+            };
+        },
+         
+        methods: {
+            addIngredient() {
+                if (!this.ingredientInput.trim()) return
+                this.ingredientsList.push(this.ingredientInput.trim())
+                this.ingredientInput = ""
+            },
+
+            removeIngredient(index) {
+                this.ingredientsList.splice(index, 1)
+            }
+        }
     }
 </script>
 
