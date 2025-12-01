@@ -3,7 +3,11 @@
         <h1 class="Title">What Ingredients Do You Have?</h1>
 
         <div class="SearchSection">
-            <input class="searchInput" placeholder="Enter an ingredient (e.g., chicken, basil, tomatoes)"></input>
+            <input 
+                class="searchInput" 
+                v-model="ingredientInput"
+                placeholder="Enter an ingredient (e.g., chicken, basil, tomatoes)"
+            ></input>
             <v-btn rounded="xl" color="tertiary" height="40" width="96" @click="addIngredient">Add</v-btn>
         </div>
 
@@ -18,7 +22,7 @@
                 {{ item }}
             </v-chip>
             </template>
-            
+
             <h4 class="NoIngredientsText" v-else>
                 No ingredients added yet.
             </h4>
